@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:portfolio/widgets/centered%20view/centered_view.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 class ProjectsDesktop extends StatefulWidget {
   const ProjectsDesktop({Key? key}) : super(key: key);
@@ -112,7 +114,11 @@ class _ProjectsDesktopState extends State<ProjectsDesktop>
                                 height: 10.0,
                               ),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  js.context.callMethod("open", [
+                                    "https://github.com/Satyam0988/Shopping-App"
+                                  ]);
+                                },
                                 child: Container(
                                   child: Text(
                                     "Visit the GitHub Repo",
@@ -168,7 +174,11 @@ class _ProjectsDesktopState extends State<ProjectsDesktop>
                                 height: 10.0,
                               ),
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  js.context.callMethod("open", [
+                                    "https://github.com/Satyam0988/portfolio"
+                                  ]);
+                                },
                                 child: Container(
                                   child: Text(
                                     "Visit the GitHub Repo",
